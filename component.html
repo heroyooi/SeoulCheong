@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title> 퍼블리싱 - 컴포넌트 가이드 </title>
+  <link rel="icon" href="img/ico-favicon.png" type="image/x-icon">
+  <link rel="stylesheet" href="css/common.css">
+  <link rel="stylesheet" href="css/prism.css">
+</head>
+<body>
+  <div id="wrap">
+    <div id="header">
+      <h1><a href="#"><img src="img/logo-srocm.png" alt="" /></a></h1>
+      <h2 class="hide">주메뉴</h2>
+      <ul id="gnb">
+        <li><a href="#">통합모니터링</a></li>
+        <li>
+          <a href="#">수집 장비 관리</a>
+          <ul class="submenu submenu2">
+            <li><a href="#">레이더 관리</a></li>
+            <li><a href="#">라이다 관리</a></li>
+            <li><a href="#">음향식노면검지기 관리</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="#">VMS관리</a>
+          <ul class="submenu submenu3">
+            <li><a href="#">VMS 제어</a></li>
+            <li><a href="#">VMS 시나리오 관리</a></li>
+            <li><a href="#">VMS 메시지 관리</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="#">AI 영상 분석</a>
+        </li>
+        <li>
+          <a href="#">위험도 예측</a>
+        </li>
+        <li>
+          <a href="#"><span class="ico">통계/이력관리</span></a>
+        </li>
+        <li>
+          <a href="#">시스템 관리</a>
+        </li>
+      </ul>
+      <h2 class="hide">유틸메뉴</h2>
+      <ul id="util">
+        <li>
+          <a href="#" class="user">
+            <span class="avatar"></span>
+            <span class="nickname">Admin 01</span>
+          </a>
+        </li>
+        <li><a href="#" class="logout">로그아웃</a></li>
+      </ul>
+    </div><!-- #header -->
+    <div id="container" class="ex_wrp component c-scrollbar">
+
+<pre class="language-html guide">
+<code><link rel="stylesheet" href="css/common.css">
+<script src="js/jquery.min.js"></script>
+<script src="js/jquery-ui.min.js"></script>
+<script src="js/jquery.magnific-popup.min.js"></script>
+<script src="js/aos.js"></script>
+<script src="js/tui-time-picker.js"></script>
+<script src="js/tui-date-picker.js"></script>
+<script src="js/ui.js"></script></code>
+</pre>
+
+      <div class="section" id="logo">
+        <h2>LOGO</h2>
+        <div class="code-area">
+          <h3>로고 <button>코드 보기</button></h3>
+<div class="code-box"><h1><a href="#"><img src="img/logo-srocm.png" alt="서울지방국토관리청 운영단말 시스템" /></a></h1>
+<h1><a href="#"><img src="img/logo-srocm-login.png" alt="서울지방국토관리청 운영단말 시스템" /></a></h1>
+<h2><a href="#"><img src="img/logo-srocm-popup.png" alt="서울지방국토관리청" /></a></h2></div>
+<pre class="language-html"></pre>
+        </div>
+      </div><!-- .section -->
+
+      <div class="section" id="icon">
+        <h2>ICON</h2>
+        <div class="code-area">
+          <h3>타입1(18) <button>코드 보기</button></h3>
+<div class="code-box"><span class="s-ico tp1 radar"></span>
+<span class="s-ico tp1 cctv"></span>
+<span class="s-ico tp1 vms"></span>
+<span class="s-ico tp1 dfs"></span>
+<span class="s-ico tp1 vds"></span>
+<span class="s-ico tp1 all"></span></div>
+<pre class="language-html"></pre>
+        </div>
+
+        <div class="code-area">
+          <h3>타입1(18) - 활성화 <button>코드 보기</button></h3>
+<div class="code-box"><span class="s-ico tp1 radar on"></span>
+<span class="s-ico tp1 cctv on"></span>
+<span class="s-ico tp1 vms on"></span>
+<span class="s-ico tp1 dfs on"></span>
+<span class="s-ico tp1 vds on"></span>
+<span class="s-ico tp1 all on"></span></div>
+<pre class="language-html"></pre>
+        </div>
+
+        <div class="code-area">
+          <h3>타입1(18) - 비활성화 <button>코드 보기</button></h3>
+<div class="code-box"><span class="s-ico tp1 radar disabled"></span>
+<span class="s-ico tp1 cctv disabled"></span>
+<span class="s-ico tp1 vms disabled"></span>
+<span class="s-ico tp1 dfs disabled"></span>
+<span class="s-ico tp1 vds disabled"></span>
+<span class="s-ico tp1 all disabled"></span></div>
+<pre class="language-html"></pre>
+        </div>
+
+
+        <div class="code-area">
+          <h3>타입2(18+10) <button>코드 보기</button></h3>
+<div class="code-box"><span class="s-ico tp2 radar"></span>
+<span class="s-ico tp2 cctv"></span>
+<span class="s-ico tp2 vms"></span>
+<span class="s-ico tp2 dfs"></span>
+<span class="s-ico tp2 vds"></span>
+<span class="s-ico tp2 all"></span></div>
+<pre class="language-html"></pre>
+        </div>
+
+        <div class="code-area">
+          <h3>타입2(18+10) - 활성화 <button>코드 보기</button></h3>
+<div class="code-box"><span class="s-ico tp2 radar on"></span>
+<span class="s-ico tp2 cctv on"></span>
+<span class="s-ico tp2 vms on"></span>
+<span class="s-ico tp2 dfs on"></span>
+<span class="s-ico tp2 vds on"></span>
+<span class="s-ico tp2 all on"></span></div>
+<pre class="language-html"></pre>
+        </div>
+
+        <div class="code-area">
+          <h3>타입2(18+10) - 비활성화 <button>코드 보기</button></h3>
+<div class="code-box"><span class="s-ico tp2 radar disabled"></span>
+<span class="s-ico tp2 cctv disabled"></span>
+<span class="s-ico tp2 vms disabled"></span>
+<span class="s-ico tp2 dfs disabled"></span>
+<span class="s-ico tp2 vds disabled"></span>
+<span class="s-ico tp2 all disabled"></span></div>
+<pre class="language-html"></pre>
+        </div>
+
+        <div class="code-area">
+          <h3>타입2(18+10) - POI Test <button>코드 보기</button></h3>
+<div class="code-box"><span class="s-ico tp2 poi radar"></span>
+<span class="s-ico tp2 poi cctv"></span>
+<span class="s-ico tp2 poi vms"></span>
+<span class="s-ico tp2 poi dfs"></span>
+<span class="s-ico tp2 poi vds"></span>
+<span class="s-ico tp2 poi all"></span></div>
+<pre class="language-html"></pre>
+        </div>
+
+        <div class="code-area">
+          <h3>타입2(18+10) - POI Test - 활성화 <button>코드 보기</button></h3>
+<div class="code-box"><span class="s-ico tp2 poi radar on"></span>
+<span class="s-ico tp2 poi cctv on"></span>
+<span class="s-ico tp2 poi vms on"></span>
+<span class="s-ico tp2 poi dfs on"></span>
+<span class="s-ico tp2 poi vds on"></span>
+<span class="s-ico tp2 poi all on"></span></div>
+<pre class="language-html"></pre>
+        </div>
+
+        <div class="code-area">
+          <h3>타입2(18+10) - POI Test - 비활성화 <button>코드 보기</button></h3>
+<div class="code-box"><span class="s-ico tp2 poi radar disabled"></span>
+<span class="s-ico tp2 poi cctv disabled"></span>
+<span class="s-ico tp2 poi vms disabled"></span>
+<span class="s-ico tp2 poi dfs disabled"></span>
+<span class="s-ico tp2 poi vds disabled"></span>
+<span class="s-ico tp2 poi all disabled"></span></div>
+<pre class="language-html"></pre>
+        </div>
+
+        <div class="code-area">
+          <h3>타입3(24) <button>코드 보기</button></h3>
+<div class="code-box"><span class="s-ico tp3 radar"></span>
+<span class="s-ico tp3 cctv"></span>
+<span class="s-ico tp3 vms"></span>
+<span class="s-ico tp3 dfs"></span>
+<span class="s-ico tp3 vds"></span>
+<span class="s-ico tp3 all"></span></div>
+<pre class="language-html"></pre>
+        </div>
+      </div><!-- .section -->
+
+    </div><!-- #container -->
+  </div><!-- #wrapper -->
+  <script src="js/prism.js"></script>
+</body>
+</html>
