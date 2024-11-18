@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -15,6 +16,7 @@
   <script src="js/tui-date-picker.js"></script>
   <script src="js/ui.js"></script>
 </head>
+
 <body>
   <div id="wrap">
     <div id="header">
@@ -65,7 +67,9 @@
     <div id="container">
       <div class="top-wrap">
         <div class="video-area">
-          <div class="video" style="background-color:#333; font-size: 24px; color: #fff; display:flex; justify-content: center; align-items: center; width: 438px; height: 328px;">영상</div>
+          <div class="video"
+            style="background-color:#333; font-size: 24px; color: #fff; display:flex; justify-content: center; align-items: center; width: 438px; height: 328px;">
+            영상</div>
         </div>
         <div class="info-area">
           <div class="input-wrap">
@@ -165,14 +169,31 @@
             </li>
           </ul>
           <span class="label">조회일자</span>
-          <div class="tui-datepicker-input tui-datetime-input tui-has-focus tui-custom" style="width: 120px;">
+
+          <div class="tui-datepicker-input tui-datetime-input tui-has-focus tui-custom" style="width: 120px;" id="search-oneway">
             <input id="datepicker-input" type="text" aria-label="Date" placeholder="0000/00/00" class="t-center" />
             <span class="tui-ico-date"></span>
             <div class="date_wrapper" id="general" style="margin-left: -1px;"></div>
           </div>
+
+          <div class="input-wrap input-datepicker" id="search-period" style="display: none;">
+            <div class="tui-datepicker-input tui-datetime-input tui-has-focus tui-custom" style="width: 120px;">
+              <input id="startpicker-input1" type="text" aria-label="Date" placeholder="0000/00/00" class="t-center">
+              <span class="tui-ico-date"></span>
+              <div id="startpicker-container1" style="margin-left: -1px;"></div>
+            </div>
+            <span class="bridge">~</span>
+            <div class="tui-datepicker-input tui-datetime-input tui-has-focus tui-custom" style="width: 120px;">
+              <input id="endpicker-input1" type="text" aria-label="Date" placeholder="0000/00/00" class="t-center">
+              <span class="tui-ico-date"></span>
+              <div id="endpicker-container1" style="margin-left: -1px;"></div>
+            </div>
+          </div>
+
           <span class="btn-base ml8"><a href="#"><em class="search">검색</em></a></span>
         </div>
-        <div class="chart-area" style="background-color: #222631;display:flex;justify-content: center;align-items: center;">
+        <div class="chart-area"
+          style="background-color: #222631;display:flex;justify-content: center;align-items: center;">
           <p style="font-size:24px;font-weight:700;line-height:1.4;color:#4c556d;">Chart Area</p>
         </div>
       </div><!-- .con-wrap -->
@@ -182,14 +203,14 @@
   <script>
     tui.DatePicker.localeTexts['customKey'] = {
       titles: {
-          // days
-          DD: ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'],
-          // daysShort
-          D: ['일', '월', '화', '수', '목', '금', '토'],
-          // months
-          MMMM: ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12'],
-          // monthsShort
-          MMM: ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12']
+        // days
+        DD: ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'],
+        // daysShort
+        D: ['일', '월', '화', '수', '목', '금', '토'],
+        // months
+        MMMM: ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12'],
+        // monthsShort
+        MMM: ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12']
       },
       titleFormat: 'yyyy.MMM',
       todayFormat: '오늘 : yyyy.MMMM.dd',
@@ -206,9 +227,46 @@
       }
     });
 
-    $(window).on('load resize', function(){
+    var today1 = new Date();
+    var picker1 = tui.DatePicker.createRangePicker({
+      startpicker: {
+        date: today1,
+        input: '#startpicker-input1',
+        container: '#startpicker-container1'
+      },
+      endpicker: {
+        date: today1,
+        input: '#endpicker-input1',
+        container: '#endpicker-container1'
+      },
+      selectableRanges: [
+        [today1, new Date(today1.getFullYear() + 1, today1.getMonth(), today1.getDate())]
+      ],
+      format: 'YYYY/MM/dd',
+    });
+
+    picker1.on('change:end', () => {
+      console.log(123);
+    });
+
+    $('#radio-date-1').on('change', function(){
+      if ($(this).is(':checked')) {
+        $('#search-oneway').show();
+        $('#search-period').hide();
+      }
+    });
+
+    $('#radio-date-2').on('change', function(){
+      if ($(this).is(':checked')) {
+        $('#search-oneway').hide();
+        $('#search-period').show();
+      }
+    });
+
+    $(window).on('load resize', function () {
       $('.chart-area').css('height', $(window).height() - $('.chart-area').offset().top - 16);
     });
   </script>
 </body>
+
 </html>
