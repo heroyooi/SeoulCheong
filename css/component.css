@@ -17,6 +17,7 @@
 .input-wrap .label:first-child{padding-left:0;}
 .input-wrap .label::before{content:'';display:block;width:1px;height:16px;background-color: #4c556d;position:absolute;left:0;top:1px;}
 .input-wrap .label:first-child::before{display:none;}
+.input-wrap .bridge{color:#b8bdcd;font-size:13px;font-weight:600;}
 .input-wrap.file{gap:0 8px;width:100%;margin-top:0;}
 .input-wrap.file .btn-base > *{padding:9px 10px;width:89px;}
 .input-wrap.file .btn-delete{position: absolute;right:105px;top:11px;width:16px;height:17px;background:url(../img/icon/ico-ss-cancel-g.svg) 50% 50% no-repeat;display:none;}
